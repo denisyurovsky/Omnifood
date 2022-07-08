@@ -1,11 +1,8 @@
-console.log("Hello world!");
-
 const h1 = document.querySelector(".heading-primary");
 
 const yearEl = document.querySelector(".year");
 const currentYear = new Date().getFullYear();
 yearEl.textContent = currentYear;
-
 
 const btnNavEl = document.querySelector(".btn-mobile-nav");
 const headerEl = document.querySelector(".header");
@@ -42,7 +39,6 @@ const sectionHeroEl = document.querySelector(".section-hero");
 const obs = new IntersectionObserver(
   function (entries) {
     const ent = entries[0];
-    console.log(ent);
 
     if (ent.isIntersecting === false) {
       document.body.classList.add("sticky");
@@ -60,7 +56,6 @@ const obs = new IntersectionObserver(
 );
 obs.observe(sectionHeroEl);
 
-
 function checkFlexGap() {
   var flex = document.createElement("div");
   flex.style.display = "flex";
@@ -73,7 +68,6 @@ function checkFlexGap() {
   document.body.appendChild(flex);
   var isSupported = flex.scrollHeight === 1;
   flex.parentNode.removeChild(flex);
-  console.log(isSupported);
 
   if (!isSupported) document.body.classList.add("no-flexbox-gap");
 }
